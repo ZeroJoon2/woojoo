@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    
+    <title>
+        {% block title %}
+            우주종합철거!
+        {% endblock %}
+    </title>
+</head>
+<body>
+    <nav class = 'nav_menu'>
+        <div class = 'nav_menu1'>
+            <a href = '/'>
+                <img src = "{% static 'img/logo.png' %}" id = logo>
+            </a>
+        </div>
+        <div class = 'nav_menu2'>
+            회사소개
+            <div id = 'nav_menu_drop'>
+                <a href = '/vision/' class = 'link_style'>비젼</a>
+            </div>
+        </div>
+        <div class = 'nav_menu3'>
+            서비스
+            <div id = 'nav_menu_drop'>
+                <ul>
+                    <li>
+                        <a href = '/services/demolition/' class = 'link_style'>종합철거</a>
+                    </li>
+                    <li>
+                        <a href = '/services/sanding/' class = 'link_style'>샌딩</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class = 'nav_menu4'>
+            우리들
+            <div id = 'nav_menu_drop'>
+                <a href = '/weare/' class = 'link_style'>이야기</a>
+            </div>
+        </div>
+        <div class = 'nav_menu5'>
+            예약하기
+            <div id = 'nav_menu_drop'>
+                (준비중)
+            </div>
+        </div>
+    </nav>
+    <div class = 'main_1'>
+        {% block main_1 %}
+        {% endblock %}
+    </div>
+    <div class = 'main_2'>
+            {% block main_2 %}
+            {% endblock %}
+    </div>
+    <footer class = 'footer'>
+        <div class = 'footer_1'>
+            <a href = 'https://www.naver.com' target="_blank"><img src = "{% static 'img/instagram.webp' %}" class = 'footer_logo'></a>
+            <a href = 'https://www.naver.com' target="_blank"><img src = "{% static 'img/Naver_blog.svg' %}" class = 'footer_logo'></a>
+            <a href = 'https://www.naver.com' target="_blank"><img src = "{% static 'img/KakaoTalk_logo.svg' %}" class = 'footer_logo'></a>
+        </div>
+        <div class = 'footer_2'>
+            대표 전화 : 1588-2984
+        </div>
+        <div class = 'footer_3'>
+            ⓒ 2022. 우주종합철거 Co. All rights reserved.
+        </div>
+    </footer>
+</body>
+</html>

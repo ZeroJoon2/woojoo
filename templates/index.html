@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+우주종합철거
+{% endblock %}
+{% block main_1 %}
+<video src = "{% static 'img/main.mp4' %}" id = 'main_video' autoplay loop>
+</video>
+{% endblock %}
+
+{% block main_2 %}
+<div class = 'main_detail'>
+    <div class = 'main_detail1'>
+        철거 외길 인생!<br>
+        철거의 대명사,<br>
+        <div id = 'strong'>
+            우주종합철거
+        </div>
+    </div>
+    <div class = 'main_detail2'>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        깔끔한 결과 보시고,<br>
+        편하게 연락 주세요!<br>
+        <a href = '/services/sanding/'>
+        <button class = 'bta'>
+            우주종합<br>
+            실력보기!
+        </button>
+        </a>
+    </div>
+    
+    <script>
+        // 스크롤 이벤트로 요소 감지
+    document.addEventListener('scroll', function () {
+        const elements = document.querySelectorAll('.main_detail1, .main_detail2');
+        const windowHeight = window.innerHeight;
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 500) { // 화면 안으로 들어오면
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible'); // 다시 사라지게
+            }
+        });
+    });
+
+    </script>
+</div>
+
+{% endblock %}
+
