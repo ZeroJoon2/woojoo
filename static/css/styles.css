@@ -1,3 +1,53 @@
+/* 잔상 효과를 위한 이미지 스타일 */
+html {
+    cursor: none;
+}
+
+.cursor-trail {
+    width: 30px; /* 이미지 크기 */
+    height: 30px;
+    border-radius: 100%;
+    border-color: black solid 3px;
+    position: absolute;
+    pointer-events: none;
+    transition: transform 0.15s ease; /* 부드러운 이동 */
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 0.7; /* 잔상 효과를 위한 약간의 투명도 */
+
+}
+
+/* 클릭 시 pulse 애니메이션 */
+.cursor-trail.pulse {
+    animation: pulse 0.3s ease-out infinite; /* pulse 애니메이션 적용 */
+}
+
+/* pulse 애니메이션 */
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.2); /* 확대 */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+
+/* 각 잔상 이미지의 투명도 조정 */
+#cursorTrail1 {
+    opacity: 1;
+}
+#cursorTrail2 {
+    opacity: 0.5;
+}
+
+/* 클릭 가능한 요소 위에서 커서 숨기기 */
+a:hover, button:hover, .clickable:hover {
+    cursor: none;
+}
 body{
     width: 100%;
     height: 2660px;
@@ -261,12 +311,16 @@ li{
     width : 100%;
     height : 300px;
     margin-top : 40%;
+    transition: transform 0.3s ease-in-out; /* 부드러운 확대 효과 */
+    opacity: 50%;
 }
 
 #main_detail_container_image_center{
     width : 300px;
     height : 300px;
     margin-top : 11%;
+    transition: transform 0.3s ease-in-out; /* 부드러운 확대 효과 */
+    opacity: 50%;
 }
 
 
@@ -282,13 +336,29 @@ li{
     background: #BED8FF;
     align-content: center;
     text-align: center; /* 텍스트 정렬 */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1; /* 기본 상태에서 보이게 설정 */
 }
 .main_detail_container_image:hover {
     scale: 120%;
+    transform: scale(1.2); /* 20% 확대 */
+    opacity: 100%;
+    border-radius: 50%;
 }
-
+.main_detail_container_image:hover + .overlay_image_before,
+.main_detail_container_image:hover + .overlay_image_after {
+    opacity: 0; /* 투명하게 변경 */
+}
 #main_detail_container_image_center:hover{
     scale : 120%;
+    transform: scale(1.2); /* 20% 확대 */
+    opacity: 100%;
+    border-radius: 50%;
+
+}
+#main_detail_container_image_center:hover + .overlay_image_before,
+#main_detail_container_image_center:hover + .overlay_image_after {
+    opacity: 0; /* 투명하게 변경 */
 }
 
 .overlay_image_after {
@@ -303,6 +373,34 @@ li{
     background: #0042A6;
     align-content: center;
     text-align: center; /* 텍스트 정렬 */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1; /* 기본 상태에서 보이게 설정 */
+}
+
+#weare_video{
+    width : 100%
+}
+
+.weare_text{
+    margin-top : 50px;
+    font-size: 20px;
+    color : white;
+}
+
+.overlay_video {
+    position: absolute; /* 부모를 기준으로 위치 지정 */
+    width : 56.5%;
+    height : 5%;
+    top: 50%; /* 세로 중앙 정렬 */
+    left: 50%; /* 가로 중앙 정렬 */
+    transform: translate(-50%, -50%); /* 정확히 중앙으로 이동 */
+    color: white; /* 텍스트 색상 */
+    font-size: 18px; /* 텍스트 크기 */
+    background: #0042A6;
+    align-content: center;
+    text-align: center; /* 텍스트 정렬 */
+    transition: opacity 0.3s ease-in-out;
+    opacity: 1; /* 기본 상태에서 보이게 설정 */
 }
 
 

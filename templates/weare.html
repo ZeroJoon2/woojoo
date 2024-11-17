@@ -1,11 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    test
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+샌딩/우주종합철거
+{% endblock %}
+{% block main_1 %}
+<div class = 'main_detail_demolition'>
+    <video src = "{% static 'img/weare/001.mp4' %}" id = 'weare_video' autoplay loop>
+    </video>
+    <div class = 'overlay_video'>우주종합철거는 지치지 않습니다!</div>
+
+</div>
+{% endblock %}
+
+{% block main_2 %}
+<div class = 'main_detail_demolition'>
+    <video src = "{% static 'img/weare/002.mp4' %}" id = 'weare_video' autoplay loop>
+    </video>
+    <div class = 'overlay_video'>여러분들의 철거 이야기를 들려주세요!</div>
+</div>
+<div class = 'weare_text'>
+    <h2>함께하고 싶습니다!🙌<br><br>
+
+        언제든 전화/카톡 부탁드립니다!😊<br><br>
+
+        ✅1588-2984✅<br><br>
+        <a href = 'http://pf.kakao.com/_zYyNG' target="_blank"><img src = "{% static 'img/KakaoTalk_logo.svg' %}" class = 'footer_logo'></a>
+    </h2>
+</div>
+
+<!-- <script>
+    document.addEventListener('DOMContentLoaded', function () {
+    const overlay = document.querySelector('.overlay_video');
+
+    // 5초 후에 텍스트 사라지기
+    setTimeout(() => {
+        overlay.style.opacity = '0'; // 투명하게 변경
+    }, 10000); // 1000ms = 1초
+});
+
+</script> -->
+
+{% endblock %}
