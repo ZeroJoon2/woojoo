@@ -14,3 +14,6 @@ def demolition(request):
 
 def sanding(request):
     return render(request, 'sanding.html')
+
+def weare(request):
+    return render(request, 'weare.html')

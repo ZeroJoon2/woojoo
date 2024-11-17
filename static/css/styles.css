@@ -4,6 +4,8 @@ body{
     font-family: 'Noto Sans KR Black';
     text-align: center;
     margin : 0 auto;
+    overflow-x: hidden;
+    touch-action: none; /* 터치 동작으로 인한 확대 방지 */
 }
 
 .nav_menu{
@@ -282,11 +284,11 @@ li{
     text-align: center; /* 텍스트 정렬 */
 }
 .main_detail_container_image:hover {
-    scale: 130%;
+    scale: 120%;
 }
 
 #main_detail_container_image_center:hover{
-    scale : 130%;
+    scale : 120%;
 }
 
 .overlay_image_after {
