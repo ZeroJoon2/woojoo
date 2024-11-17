@@ -4,8 +4,97 @@
 비전/우주종합철거
 {% endblock %}
 {% block main_1 %}
-
+<div class = 'main_detail_vision'>
+    <div class = 'main_detail_vision_1'>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        고객님들께<br>
+        드리는 말,
+    </div>
+    <div class = 'vision_container'>
+        <h2>
+            철거 외길, 우주종합철거입니다!
+        </h2>
+        <p>
+            안녕하세요! 먼저, 우주종합철거를 찾아주신 여러분께 진심으로 감사의 인사를 전합니다!<br><br>
+            
+            저희는 유리 인테리어 자영업 가정에서 출발하여, 현장에서의 오랜 경험을 바탕으로 철거 분야에 깊은 이해와 전문성을 쌓아왔습니다.<br><br>
+            
+            철거는 때로는 힘든 결정이 필요한 시점일 수도 있고, 새로운 도전과 기회를 열어가는 순간일 수 있습니다.<br><br>
+            
+            이에 저희는 철거 작업을 넘어, 여러분의 이야기를 듣고 같이 성장하는 가치를 추구합니다!<br><br>
+            
+            어떤 이유로든 철거가 필요한 순간, 저희와 함께 이야기 공유해주세요!<br><br>
+            
+            언제든지 편하게 연락주세요! 여러분들의 새로운 시작을 응원하며, 깔끔하고 안전한 철거를 도와드리겠습니다!<br><br>
+            
+            감사합니다!
+        </p>
+        <h5>우주종합철거 드림</h5>
+    </div>
+</div>
 {% endblock %}
 
 {% block main_2 %}
+<div class = 'main_detail'>
+    <div class = 'main_detail1'>
+        철거 외길 인생!<br>
+        철거의 대명사,<br>
+        <div id = 'strong'>
+            우주종합철거
+        </div>
+    </div>
+    <div class = 'main_detail2'>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        깔끔한 결과 보시고,<br>
+        편하게 연락 주세요!<br>
+        <a href = '/services/sanding/'>
+        <button class = 'bta'>
+            우주종합<br>
+            실력보기!
+        </button>
+        </a>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const element = document.querySelector('.main_detail_vision');
+        element.style.animationDelay = '0.5s'; // 원하는 지연 시간 설정 (선택 사항)
+    });
+
+        // 스크롤 이벤트로 요소 감지
+    document.addEventListener('scroll', function () {
+        const elements = document.querySelectorAll('.main_detail_vision, .main_detail1, .main_detail2');
+        const windowHeight = window.innerHeight;
+
+        elements.forEach(element => {
+            const elementTop = element.getBoundingClientRect().top;
+
+            if (elementTop < windowHeight - 500) { // 화면 안으로 들어오면
+                element.classList.add('visible');
+            } else {
+                element.classList.remove('visible'); // 다시 사라지게
+            }
+        });
+    });
+
+    </script>
+</div>
 {% endblock %}
