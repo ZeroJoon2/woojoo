@@ -18,6 +18,23 @@
     </title>
 </head>
 <body>
+    <div class = 'nav_menu_mobile' onclick = 'toggleMenu()'>
+        <a href = '/'>
+            <img src = "{% static 'img/logo.png' %}" id = logo>
+        </a>
+        ☰
+        
+    </div>
+    <div class="menu-overlay">
+        <nav class="nav_menu_mobile_menu">
+            <a href="/">홈</a>
+            <a href="/vision/">비젼</a>
+            <a href="/services/demolition/">종합철거</a>
+            <a href="/services/sanding/">샌딩</a>
+            <a href="/weare/">이야기</a>
+            <a>예약하기(준비중)</a>
+        </nav>
+    </div>
     <nav class = 'nav_menu'>
         <div class = 'nav_menu1'>
             <a href = '/'>
@@ -81,7 +98,10 @@
 </html>
 
 <script>
-    
+    function toggleMenu() {
+    const overlay = document.querySelector('.menu-overlay');
+    overlay.classList.toggle('active');
+}
 /****************************************/
 /*************공통************************/
 /****************************************/
@@ -134,9 +154,9 @@
 /****************************************/
 /*************공통************************/
 /****************************************/
-document.addEventListener('wheel', function (event) {
-    if (event.ctrlKey) {
-        event.preventDefault(); // Ctrl + 휠 동작을 비활성화
-    }
-}, { passive: false });
+    document.addEventListener('wheel', function (event) {
+        if (event.ctrlKey) {
+            event.preventDefault(); // Ctrl + 휠 동작을 비활성화
+        }
+    }, { passive: false });
 </script>

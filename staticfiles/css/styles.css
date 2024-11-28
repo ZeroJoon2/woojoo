@@ -62,7 +62,7 @@ body{
     height : 130px;
     display : flex;
     gap : 12%;
-    font-size: 46px;
+    font-size: 2vw;
     font-style: italic;
     margin-top : 50px;
     margin-left : 40px;
@@ -77,7 +77,7 @@ body{
     width : 90%;    
     height : 50%;
     font-family: 'Noto Sans KR Regular';
-    font-size: 18px;
+    font-size: 1vw;
     margin-top: 20px;
     text-decoration: none;
     z-index: 999;
@@ -108,7 +108,7 @@ li{
     text-decoration: none;
     font-family: 'Noto Sans KR Regular';
     font-style: normal;
-    font-size: 18px;
+    font-size: 1.2vw;
     color : black;
 }
 
@@ -181,13 +181,13 @@ li{
     border-radius: 20px;
     background: white;
     font-family: 'Noto sans KR Black';
-    font-size: 30px;
+    font-size: 2vw;
     cursor: pointer;
 }
 /*index*/
 #main_video{
-    width: 100%;
-    height: 100%; /* 부모 높이에 맞춤 */
+    width: 100vw;
+    height: auto; /* 부모 높이에 맞춤 */
     object-fit: cover; /* 컨테이너를 꽉 채우고 넘치는 부분은 잘림 */
     position: relative; /* position 추가 */
     z-index: 0;
@@ -209,6 +209,7 @@ li{
     opacity: 0; /* 처음에는 투명 */
     transform: translateY(50px); /* 아래쪽에 위치 */
     transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+    font-size: 2.0vw;
 }
 
 .main_detail1.visible {
@@ -222,7 +223,7 @@ li{
 }
 
 #strong{
-    font-size : 50px;
+    font-size : 4.5vw;
     text-align: center;
 }
 
@@ -430,3 +431,77 @@ li{
 /*****************************************************************************/
 /*****************************************************************************/
 /*****************************************************************************/
+
+/*****************************************************************************/
+/*************반응형***********************************************************/
+/*****************************************************************************/
+
+.nav_menu_mobile{
+    display: none;
+
+}
+
+.menu-overlay {
+    display: none; /* 기본적으로 숨김 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white; /* 전체 화면 흰색 배경 */
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media screen and (max-width:950px){
+    .nav_menu {
+        display: none;
+    }
+
+    .nav_menu_mobile{
+        display: flex;
+        gap : 60%;
+        height : 3%;
+        font-size: 5vw;
+        position: relative; /* position 추가 */
+        z-index: 3;
+        text-align: right;
+        margin : 3%;
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+
+    #logo{
+        text-align: left;
+        z-index: 100;
+        color : black
+    }
+
+
+    .menu-overlay.active {
+        display: flex; /* 활성화 시 보이기 */
+    }
+    
+    .nav_menu_mobile_menu{
+        display: flex;
+        flex-direction: column; /* 세부 메뉴를 하위로 정렬 */
+        gap: 20px; /* 메뉴 간격 */
+        width: 100%;
+        align-items: center;
+
+    }
+    .nav_menu_mobile_menu a {
+        font-size: 24px;
+        color: black;
+        text-decoration: none;
+        margin: 10px 0;
+        font-family: 'Noto Sans KR Regular';
+    }
+
+    .nav_menu_mobile_menu a:hover {
+        font-weight: bold;
+    }
+
+}

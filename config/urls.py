@@ -22,9 +22,9 @@ from .views import *
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path("", index, name = 'index'),
-    path("vision/", vision, name = 'vision'),
-    path("services/demolition/", demolition, name = 'demolition'),
-    path("services/sanding/", sanding, name = 'sanding'),
-    path("weare/", weare, name = 'weare'),
+    path("", index, name="index"),
+    path("vision/", vision, name="vision"),
+    path("services/demolition/", demolition, name="demolition"),
+    path("services/sanding/", sanding, name="sanding"),
+    path("weare/", weare, name="weare"),
 ]

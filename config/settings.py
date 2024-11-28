@@ -25,9 +25,9 @@ TEMPLATES_DIR = BASE_DIR / "templates"
 SECRET_KEY = "django-insecure-^ms!dw8ir0$ko=0p(!*%n30s$_0v7ah3op+&8o8f#r5f869)8="
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['172.31.147.192', 'woojoo.kro.kr']
+ALLOWED_HOSTS = ["125.129.250.60", "woojoo0310.kro.kr", '127.0.0.1', '172.30.1.44']
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "config.urls"
@@ -118,12 +119,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = "static/"
-STATICFILES_DIRS = [
-    BASE_DIR / "static"
-]
+STATICFILES_DIRS = [BASE_DIR / "static"]
 
-STATIC_ROOT = TEMPLATES_DIR = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = TEMPLATES_DIR = os.path.join(BASE_DIR, "staticfiles")
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
